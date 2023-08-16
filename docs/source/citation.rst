@@ -1,4 +1,0 @@
-Suggested Citation
-###################
-
-    citation here
