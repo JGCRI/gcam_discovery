@@ -9,7 +9,7 @@ Scenario Discovery with GCAM
 
 .. only:: html
    
-   A how-to guide for designing and conducing scenario discovery experiements using the Global Change Assessment Model (GCAM)
+   A how-to guide for designing and conducing scenario discovery experiements using the Global Change Analysis Model (GCAM)
 
    **Chapters**
 
