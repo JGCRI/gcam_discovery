@@ -65,7 +65,7 @@ html_theme = 'sphinx_book_theme'
 # theme options
 html_theme_options = {
     'path_to_docs': '/docs',
-    'repository_url': 'https://github.com/IMMM-SFA/msd_uncertainty_ebook',
+    'repository_url': 'https://github.com/JGCRI/gcam_discovery',
     'use_issues_button': True,
     'use_download_button': True,
     'use_repository_button': True,
