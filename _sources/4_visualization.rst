@@ -13,5 +13,5 @@ Running a large and complicated model many times makes it impossible to contain 
    :width: 80%
    :alt: Heatmaps
 
-   **Courtesty of from Birnbaum et al. (2022)**: Heatmaps showing relative importance of parameters varied across scenarios for three water scarcity metrics for basins in Latin America and the Caribbean in 2100. The seven varied parameters are agriculture (AG), socioeconomics (SOC), other Shared Socioeconomic Pathway factors (OSF), earth system model (ESM), groundwater accessibility (GW), reservoir storage (RES), and carbon scenario background (labeled TAX here, but represents generic shadow price).
+   **Courtesty of Birnbaum et al. (2022)**: Heatmaps showing relative importance of parameters varied across scenarios for three water scarcity metrics for basins in Latin America and the Caribbean in 2100. The seven varied parameters are agriculture (AG), socioeconomics (SOC), other Shared Socioeconomic Pathway factors (OSF), earth system model (ESM), groundwater accessibility (GW), reservoir storage (RES), and carbon scenario background (labeled TAX here, but represents generic shadow price).
    
