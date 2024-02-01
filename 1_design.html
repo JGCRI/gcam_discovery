@@ -340,7 +340,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -356,6 +358,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-uncertain-exogenous-parameters-should-be-varied-within-the-scenario-configurations">2.1. Which uncertain exogenous parameters should be varied within the scenario configurations?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-number-of-variable-parameters">2.1.1. Determining the Number of Variable Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-plausible-ranges-for-each-sensitivity">2.1.2. What are the plausible ranges for each sensitivity?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -368,9 +382,8 @@ document.write(`
   <section id="experimental-design">
 <span id="design"></span><h1><span class="section-number">2. </span>Experimental Design<a class="headerlink" href="#experimental-design" title="Link to this heading">#</a></h1>
 <p>Designing a scenario discovery experiment with GCAM is centered around the construction of a large scenario ensemble of model runs. This is typically the most difficult and laborious step of the process, but spending the time to develop a rich and impactful ensemble of realizations will provide the greatest return on the quality of the final research product, and will increase opportunities for leveraging the ensemble in additional projects and new collaborations. There is no set threshold of unique model simulations to reach in order to constitute a “large ensemble” but the output must sufficiently explore an uncertainty space relevant to the research questions. Organizing thoughts and ideas about relevant uncertainties can be facilitated by the use of existing frameworks for modeling uncertainty. One such technique is the “XLRM” framework commonly deployed in RDM circles, articulating and delineating the relevant eXogenous uncertainties, strategy Levers, modeled Relationships, and performance Measures (metrics) [Rand 2003]. Developing the intellectual basis for an ensemble using this framework can be done by answering the following questions:</p>
-<ol class="arabic simple">
-<li><p>Which uncertain exogenous parameters should be varied within the scenario configurations?</p></li>
-</ol>
+<section id="which-uncertain-exogenous-parameters-should-be-varied-within-the-scenario-configurations">
+<h2><span class="section-number">2.1. </span>Which uncertain exogenous parameters should be varied within the scenario configurations?<a class="headerlink" href="#which-uncertain-exogenous-parameters-should-be-varied-within-the-scenario-configurations" title="Link to this heading">#</a></h2>
 <p>This list will constitute the parametric uncertainty space covered by the ensemble. Generally, this will be informed by a review of the relevant literature, conversations with stakeholders, and specific research goals to be achieved. Some possibilities for what to include could be a combination of:</p>
 <ul class="simple">
 <li><p>Parameters commonly shown to be important drivers of your relevant outcomes (e.g., water availability on crop production)</p></li>
@@ -379,6 +392,15 @@ document.write(`
 <li><p>Parameters of which the model’s representation is particularly strong or detailed</p></li>
 <li><p>Parameters which are highly connected to many different systems (e.g., population).</p></li>
 </ul>
+<section id="determining-the-number-of-variable-parameters">
+<h3><span class="section-number">2.1.1. </span>Determining the Number of Variable Parameters<a class="headerlink" href="#determining-the-number-of-variable-parameters" title="Link to this heading">#</a></h3>
+<p>In addition to literature review and expert elicitation, the makeup of a scenario ensemble will also be bound by practicality. Because each new sensitivity will multiply the ensemble size, there will be a realistic limit based on total computation time and storage capacity for the resulting databases. Similarly, it must also be determined how many discrete values a parameter can take on. For example, ten sensitivities with two unique values each will result in the same number of model runs as four sensitivities with five unique values each. Another consideration regarding practicality is estimating the amount of time before data obsolescence. In a constantly evolving field focused on modeling future states of the world, the relevance of forecasts wanes over time, so a balance must be struck between coverage and speed.</p>
+</section>
+<section id="what-are-the-plausible-ranges-for-each-sensitivity">
+<h3><span class="section-number">2.1.2. </span>What are the plausible ranges for each sensitivity?<a class="headerlink" href="#what-are-the-plausible-ranges-for-each-sensitivity" title="Link to this heading">#</a></h3>
+<p>This can be determined through literature review, where extreme bounds can be chosen to cover the widest possible range, or simply the most common. Additionally, some parameters may be bounded by their zero-sum complementarity with competing options, or physics of natural processes.</p>
+</section>
+</section>
 </section>
 
 
@@ -417,7 +439,24 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-uncertain-exogenous-parameters-should-be-varied-within-the-scenario-configurations">2.1. Which uncertain exogenous parameters should be varied within the scenario configurations?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-number-of-variable-parameters">2.1.1. Determining the Number of Variable Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-plausible-ranges-for-each-sensitivity">2.1.2. What are the plausible ranges for each sensitivity?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
