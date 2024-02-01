@@ -369,6 +369,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-every-single-combination-of-inputs-be-included-and-run">2.1.3. Should every single combination of inputs be included and run?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-strategy-related-scenario-factors-if-any-should-be-included-in-the-ensemble">2.2. What strategy-related scenario factors, if any, should be included in the ensemble?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-sufficient-linkages-exist-in-the-model-to-examine-the-dynamics-being-studied">2.3. Do sufficient linkages exist in the model to examine the dynamics being studied?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-performance-metrics-are-needed-to-perform-the-analysis-and-are-they-available-in-the-model">2.4. Which performance metrics are needed to perform the analysis, and are they available in the model?</a></li>
 </ul>
             </nav>
         </div>
@@ -407,10 +410,61 @@ document.write(`
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/exp_design_figure_1.png"><img alt="Strategy for sampling the SSP space" src="_images/exp_design_figure_1.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><strong>Figure 1 from Lamontagne et al. (2018)</strong>: Strategy for sampling the SSP space. The SSP assumptions are aggregated into six sampling dimensions, each having a number of discrete sampling levels composed of a distinct set of assumptions (i.e., input data and GCAM parameter values). The five canonical SSPs are shown in bold color. A full factorial sampling is applied.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><strong>Courtesy of Lamontagne et al. (2018)</strong>: Strategy for sampling the SSP space. The SSP assumptions are aggregated into six sampling dimensions, each having a number of discrete sampling levels composed of a distinct set of assumptions (i.e., input data and GCAM parameter values). The five canonical SSPs are shown in bold color. A full factorial sampling is applied.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
+</section>
+<section id="what-strategy-related-scenario-factors-if-any-should-be-included-in-the-ensemble">
+<h2><span class="section-number">2.2. </span>What strategy-related scenario factors, if any, should be included in the ensemble?<a class="headerlink" href="#what-strategy-related-scenario-factors-if-any-should-be-included-in-the-ensemble" title="Link to this heading">#</a></h2>
+<p>Strategy-related factors can add an additional dimension to a scenario ensemble (or be the main focus), and can include anything from emissions reductions to land conservation to embargoes to representative taxes and subsidies. These will scale the size of an ensemble the same way a parametric sensitivity will.</p>
+</section>
+<section id="do-sufficient-linkages-exist-in-the-model-to-examine-the-dynamics-being-studied">
+<h2><span class="section-number">2.3. </span>Do sufficient linkages exist in the model to examine the dynamics being studied?<a class="headerlink" href="#do-sufficient-linkages-exist-in-the-model-to-examine-the-dynamics-being-studied" title="Link to this heading">#</a></h2>
+<p>This is an important consideration and could require developing new relationships within the model to properly represent connections between systems or simply adding detail to a sector.</p>
+</section>
+<section id="which-performance-metrics-are-needed-to-perform-the-analysis-and-are-they-available-in-the-model">
+<h2><span class="section-number">2.4. </span>Which performance metrics are needed to perform the analysis, and are they available in the model?<a class="headerlink" href="#which-performance-metrics-are-needed-to-perform-the-analysis-and-are-they-available-in-the-model" title="Link to this heading">#</a></h2>
+<p>Collecting the information necessary to construct a large ensemble can be made easier through the use of a scenario matrix; for example:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Uncertain parameter</p></th>
+<th class="head"><p>Number of unique cases</p></th>
+<th class="head"><p>Description of each case</p></th>
+<th class="head"><p>Files necessary to run it</p></th>
+<th class="head"><p>Plain language description</p></th>
+<th class="head"><p>Technical representation in model</p></th>
+<th class="head"><p>Source(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SSP</p></td>
+<td><p>5</p></td>
+<td><p>SSP1, SSP2, SSP3, SSP4, SSP5</p></td>
+<td><p>e.g., list of XML’s</p></td>
+<td><p>Shared socio-economic pathways are…</p></td>
+<td><p>Changes GDP, tech. costs, etc. …</p></td>
+<td><p><a class="reference external" href="https://jgcri.github.io/gcam-doc/ssp.html">GCAM SSP documentation</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Climate scenario</p></td>
+<td><p>2</p></td>
+<td><p>With climate targets vs. w/o climate targets</p></td>
+<td><p>e.g., list of XML’s</p></td>
+<td><p>Limiting world to 1.5°C</p></td>
+<td><p>Uses target finder to…</p></td>
+<td><p>IPCC Report</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>Following this, the uncertain parameters must be translated into specific technical representations in GCAM. For some, updating coefficients in core XML files could be sufficient, but the recommended method is to instead update input CSV files and rerun the GCAM data system to generate new XML files. Refer to the <a class="reference external" href="https://jgcri.github.io/gcamdata/index.html">documentation for gcamdata</a> for more information on changing the data system, as well as <a class="reference external" href="https://jgcri.github.io/gcam-doc/policies.html">GCAM’s documentation for constructing policies</a>.</p>
 </section>
 </section>
 
@@ -465,6 +519,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#should-every-single-combination-of-inputs-be-included-and-run">2.1.3. Should every single combination of inputs be included and run?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-strategy-related-scenario-factors-if-any-should-be-included-in-the-ensemble">2.2. What strategy-related scenario factors, if any, should be included in the ensemble?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-sufficient-linkages-exist-in-the-model-to-examine-the-dynamics-being-studied">2.3. Do sufficient linkages exist in the model to examine the dynamics being studied?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-performance-metrics-are-needed-to-perform-the-analysis-and-are-they-available-in-the-model">2.4. Which performance metrics are needed to perform the analysis, and are they available in the model?</a></li>
 </ul>
   </nav></div>
 
