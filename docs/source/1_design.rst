@@ -32,7 +32,7 @@ _______________________________________________________________
 
 A full factorial sampling will be the most detailed implementation of the ensemble, but depending on the experiment, may not be the most appropriate method. Because the number of realizations scales exponentially, it may be necessary to sample the possible configurations based on a Latin hypercube sampling, a probabilistic analysis, or eliminating implausible or redundant configurations. For continuous parameters, it is possible to sample from a low-discrepancy sequence, such as a Sobol sequence, rather than combinations of discrete levels, in order to fill the parameter space with fewer points.
 
-.. figure:: exp_design_figure_1.png
+.. figure:: 1_design_figure_1.png
    :align: center
    :width: 80%
    :alt: Strategy for sampling the SSP space
