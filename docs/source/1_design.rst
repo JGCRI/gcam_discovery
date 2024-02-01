@@ -27,3 +27,15 @@ ____________________________________________________
 
 This can be determined through literature review, where extreme bounds can be chosen to cover the widest possible range, or simply the most common. Additionally, some parameters may be bounded by their zero-sum complementarity with competing options, or physics of natural processes. 
 
+Should every single combination of inputs be included and run?
+_______________________________________________________________
+
+A full factorial sampling will be the most detailed implementation of the ensemble, but depending on the experiment, may not be the most appropriate method. Because the number of realizations scales exponentially, it may be necessary to sample the possible configurations based on a Latin hypercube sampling, a probabilistic analysis, or eliminating implausible or redundant configurations. For continuous parameters, it is possible to sample from a low-discrepancy sequence, such as a Sobol sequence, rather than combinations of discrete levels, in order to fill the parameter space with fewer points.
+
+.. figure:: exp_design_figure_1.png
+   :align: center
+   :width: 80%
+   :alt: Strategy for sampling the SSP space
+
+   **Figure 1 from Lamontagne et al. (2018)**: Strategy for sampling the SSP space. The SSP assumptions are aggregated into six sampling dimensions, each having a number of discrete sampling levels composed of a distinct set of assumptions (i.e., input data and GCAM parameter values). The five canonical SSPs are shown in bold color. A full factorial sampling is applied.
+
