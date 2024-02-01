@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Analyzing outcomes &#8212; Scenario Discovery with GCAM  documentation</title>
+    <title>4. Analysis &#8212; Scenario Discovery with GCAM  documentation</title>
   
   
   
@@ -157,7 +157,7 @@
 <li class="toctree-l1"><a class="reference internal" href="0_preface.html">1. Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_design.html">2. Experimental Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_run.html">3. Running an experiment</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Analyzing outcomes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_visualization.html">5. Visualizing outcomes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_communicate.html">6. Communicate outcomes</a></li>
 </ul>
@@ -351,7 +351,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analyzing outcomes</h1>
+    <h1>Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -365,9 +365,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="analyzing-outcomes">
-<span id="analysis"></span><h1><span class="section-number">4. </span>Analyzing outcomes<a class="headerlink" href="#analyzing-outcomes" title="Link to this heading">#</a></h1>
-<p>Content here.</p>
+  <section id="analysis">
+<span id="id1"></span><h1><span class="section-number">4. </span>Analysis<a class="headerlink" href="#analysis" title="Link to this heading">#</a></h1>
+<p>Querying a large ensemble of GCAM outputs will most likely be done on the computing cluster which stores the databases. R will need to be installed in order to use <a class="reference external" href="https://github.com/JGCRI/rgcam">rgcam</a>, an R package that extracts GCAM database output into readable data formats. In a standard GCAM installation, main queries can be found in gcam-core/output/queries/Main_queries.xml and can also be customized to fit specific needs. It can be helpful to query a single model realization to see the resulting size of the output csv. Many queries can be aggregated at different levels, and individual regions, basins, model years, etc., can be specified.</p>
+<p>Scenario discovery relies on machine learning and other statistical methods to reveal patterns in many-dimensional data. Clusters of realizations with shared input conditions leading to similar outcomes, tradeoffs, synergies, and temporal dynamics are termed “scenarios’’, which are generally framed to be interpretable, scientific or strategy-relevant insights. Note that GCAM terms each model run a “scenario”, but for the purposes of scenario discovery and other RDM tools, a more appropriate terminology would be “realization”, “simulation”, “model run”, or “ensemble member”, not to be used interchangeably with “scenario” to avoid confusion or ambiguity.</p>
+<p>There are many algorithms capable of describing the similarity or difference between data. A common class of techniques used in scenario discovery is ensemble trees, an extension of Classification and Regression Trees (CART), as they produce interpretable and intuitive analyses and can handle nonlinear data. Additionally, other clustering algorithms such as k-means, k-medoids, and time series clustering can be used to generate scenario typologies, while dimensionality reduction techniques like PCA can also quantify important drivers of outcomes. Other feature importance or feature selection methods commonly used include <a class="reference external" href="https://www.rand.org/content/dam/rand/pubs/papers/2021/P295.pdf">Shapley values</a> as well as various regression techniques like logistic regression, ridge, and lasso.</p>
+<p>Ensemble tree methods include variations such as bootstrap aggregation (bagging), boosted decision trees, and random forests. Classification can be used to determine outcomes beyond a specified threshold or in an extreme region of the output space, while regression can reveal more general drivers of outcomes. The “predictors” or “features” used to train such models are the sensitivities varied in the ensemble, while the response variables are the chosen metrics. When using these models for prediction, the data should be split into training, validation, and test sets. In addition to producing decision tree figures, quantifying the influence of each predictor can be done using a feature importance analysis, which broadly determines the impact that the inclusion of each predictor has on the model performance. This can be measured as a reduction in MSE, an improvement in the Gini index, etc., and can generally be performed with statistical software packages such as <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> or <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a> for Python, and <a class="reference external" href="https://github.com/bethatkinson/rpart">rpart</a> or <a class="reference external" href="https://cran.r-project.org/web/packages/randomForest/index.html">randomForest</a> for R. Note that the feature importance will change depending on the subset of the data used. Therefore, feature importances can be computed across regions, basins, timesteps, etc. Additionally, ensemble tree methods will give scores for each tree generated, allowing for uncertainty in the feature importance to be reported. Feature importance algorithms in general may be based on different underlying statistical assumptions (which can affect how a score is interpreted) and perform differently depending on the data types of input features (causing differences in feature importance scores and rankings across techniques), so the choice of methods should consider the suite of available tools.</p>
+<p>Computing the variability of the effect each driver has on the metrics of interest can be done by taking the difference in outcomes between pairs of realizations which differ only by a single sensitivity. Doing so across the scenario ensemble will produce a distribution, which can be shown using boxplots, CDFs, or one-to-one scatterplots. In addition to showing the magnitude of each driver’s influence, interactive effects can be computed using a variance decomposition such as Sobol sensitivity analysis, available via <a class="reference external" href="https://salib.readthedocs.io/en/latest/">SALib</a> in Python. Further, partial dependence plots can show a model’s sensitivity to a given feature across its input space.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/3_analysis_figure_1.png"><img alt="CART" src="_images/3_analysis_figure_1.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text"><strong>Courtesty of Dolan et al. (2021)</strong>: CART classification of positive versus negative economic impact summed over time in the Orinoco Basin. Red end nodes represent negative impact subgroups and green end nodes represent positive impact subgroups. The fraction at the top of each node shows the purity of each node, while the percentage in each end node is the percent of total scenarios within that subgroup.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 
 
