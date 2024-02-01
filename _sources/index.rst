@@ -44,7 +44,6 @@ Scenario Discovery with GCAM
    * `Running an experiment <2_run.html>`_ 
    * `Analysis <3_analysis.html>`_
    * `Visualization <4_visualization.html>`_ 
-   * `Communicating outcomes <5_communicate.html>`_
 
 
     .. tip::
@@ -92,7 +91,6 @@ Scenario Discovery with GCAM
     2_run
     3_analysis
     4_visualization
-    5_communicate
 
 
 .. raw:: latex

@@ -159,11 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="2_run.html">3. Running an experiment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_analysis.html">4. Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_visualization.html">5. Visualizing outcomes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_communicate.html">6. Communicate outcomes</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Glossary</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="6_glossary.html">Glossary</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -408,7 +403,7 @@ document.write(`
 <h3><span class="section-number">2.1.3. </span>Should every single combination of inputs be included and run?<a class="headerlink" href="#should-every-single-combination-of-inputs-be-included-and-run" title="Link to this heading">#</a></h3>
 <p>A full factorial sampling will be the most detailed implementation of the ensemble, but depending on the experiment, may not be the most appropriate method. Because the number of realizations scales exponentially, it may be necessary to sample the possible configurations based on a Latin hypercube sampling, a probabilistic analysis, or eliminating implausible or redundant configurations. For continuous parameters, it is possible to sample from a low-discrepancy sequence, such as a Sobol sequence, rather than combinations of discrete levels, in order to fill the parameter space with fewer points.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/exp_design_figure_1.png"><img alt="Strategy for sampling the SSP space" src="_images/exp_design_figure_1.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/1_design_figure_1.png"><img alt="Strategy for sampling the SSP space" src="_images/1_design_figure_1.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><strong>Courtesy of Lamontagne et al. (2018)</strong>: Strategy for sampling the SSP space. The SSP assumptions are aggregated into six sampling dimensions, each having a number of discrete sampling levels composed of a distinct set of assumptions (i.e., input data and GCAM parameter values). The five canonical SSPs are shown in bold color. A full factorial sampling is applied.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
