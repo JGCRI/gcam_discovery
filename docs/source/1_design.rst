@@ -37,5 +37,54 @@ A full factorial sampling will be the most detailed implementation of the ensemb
    :width: 80%
    :alt: Strategy for sampling the SSP space
 
-   **Figure 1 from Lamontagne et al. (2018)**: Strategy for sampling the SSP space. The SSP assumptions are aggregated into six sampling dimensions, each having a number of discrete sampling levels composed of a distinct set of assumptions (i.e., input data and GCAM parameter values). The five canonical SSPs are shown in bold color. A full factorial sampling is applied.
+   **Courtesy of Lamontagne et al. (2018)**: Strategy for sampling the SSP space. The SSP assumptions are aggregated into six sampling dimensions, each having a number of discrete sampling levels composed of a distinct set of assumptions (i.e., input data and GCAM parameter values). The five canonical SSPs are shown in bold color. A full factorial sampling is applied.
 
+What strategy-related scenario factors, if any, should be included in the ensemble?
+------------------------------------------------------------------------------------
+
+Strategy-related factors can add an additional dimension to a scenario ensemble (or be the main focus), and can include anything from emissions reductions to land conservation to embargoes to representative taxes and subsidies. These will scale the size of an ensemble the same way a parametric sensitivity will.
+
+Do sufficient linkages exist in the model to examine the dynamics being studied?
+---------------------------------------------------------------------------------
+
+This is an important consideration and could require developing new relationships within the model to properly represent connections between systems or simply adding detail to a sector.
+
+Which performance metrics are needed to perform the analysis, and are they available in the model?
+---------------------------------------------------------------------------------------------------
+
+Collecting the information necessary to construct a large ensemble can be made easier through the use of a scenario matrix; for example:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Uncertain parameter
+     - Number of unique cases
+     - Description of each case
+     - Files necessary to run it
+     - Plain language description
+     - Technical representation in model
+     - Source(s)
+   * - SSP
+     - 5
+     - SSP1, SSP2, SSP3, SSP4, SSP5
+     - e.g., list of XML’s
+     - Shared socio-economic pathways are…
+     - Changes GDP, tech. costs, etc. …
+     - `GCAM SSP documentation <https://jgcri.github.io/gcam-doc/ssp.html>`_
+   * - Climate scenario
+     - 2
+     - With climate targets vs. w/o climate targets
+     - e.g., list of XML’s
+     - Limiting world to 1.5°C
+     - Uses target finder to…
+     - IPCC Report
+   * - ...
+     - ...
+     - ...
+     - ...
+     - ...
+     - ...
+     - ...
+
+Following this, the uncertain parameters must be translated into specific technical representations in GCAM. For some, updating coefficients in core XML files could be sufficient, but the recommended method is to instead update input CSV files and rerun the GCAM data system to generate new XML files. Refer to the `documentation for gcamdata <https://jgcri.github.io/gcamdata/index.html>`_ for more information on changing the data system, as well as `GCAM’s documentation for constructing policies <https://jgcri.github.io/gcam-doc/policies.html>`_.
