@@ -19,5 +19,5 @@ Computing the variability of the effect each driver has on the metrics of intere
    :width: 80%
    :alt: CART
 
-   **Courtesty of Dolan et al. (2021)**: CART classification of positive versus negative economic impact summed over time in the Orinoco Basin. Red end nodes represent negative impact subgroups and green end nodes represent positive impact subgroups. The fraction at the top of each node shows the purity of each node, while the percentage in each end node is the percent of total scenarios within that subgroup.
+   Courtesty of :cite:t:`dolan2021evaluating`: CART classification of positive versus negative economic impact summed over time in the Orinoco Basin. Red end nodes represent negative impact subgroups and green end nodes represent positive impact subgroups. The fraction at the top of each node shows the purity of each node, while the percentage in each end node is the percent of total scenarios within that subgroup.
    
