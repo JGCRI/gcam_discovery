@@ -40,7 +40,7 @@ Scenario Discovery with GCAM
    **Chapters**
 
    * `Preface <0_preface.html>`_
-   * `Exeriemental design <1_design.html>`_
+   * `Experimental design <1_design.html>`_
    * `Running an experiment <2_run.html>`_ 
    * `Analysis <3_analysis.html>`_
    * `Visualization <4_visualization.html>`_ 
