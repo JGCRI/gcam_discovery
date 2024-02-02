@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Running an experiment &#8212; Scenario Discovery with GCAM  documentation</title>
+    <title>2. Running an experiment &#8212; Scenario Discovery with GCAM  documentation</title>
   
   
   
@@ -46,8 +46,8 @@
     <script src="_static/custom.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Analysis" href="3_analysis.html" />
-    <link rel="prev" title="2. Experimental Design" href="1_design.html" />
+    <link rel="next" title="3. Analysis" href="3_analysis.html" />
+    <link rel="prev" title="1. Experimental Design" href="1_design.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,14 +148,18 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Suggested Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_preface.html">1. Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_design.html">2. Experimental Design</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Running an experiment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_analysis.html">4. Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_visualization.html">5. Visualizing outcomes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_background.html">6. Background Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_design.html">1. Experimental Design</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Running an experiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_analysis.html">3. Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_visualization.html">4. Visualizing outcomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_background.html">5. Background Reading</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
@@ -358,13 +362,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="running-an-experiment">
-<span id="run"></span><h1><span class="section-number">3. </span>Running an experiment<a class="headerlink" href="#running-an-experiment" title="Link to this heading">#</a></h1>
+<span id="run"></span><h1><span class="section-number">2. </span>Running an experiment<a class="headerlink" href="#running-an-experiment" title="Link to this heading">#</a></h1>
 <p>After the experimental design phase, each individual uncertainty lever across the ensemble should be run through GCAM in isolation and its outputs examined, in order to verify the expected behavior and compare it to previous work as well as the broader literature. One example could be to check if a customized carbon emissions scenario actually represents emissions as intended and solves properly, or if add-on files need to be read in a different order. This is necessary to ground truth isolated effects and could save significant troubleshooting time later on. Of course, in a full factorial ensemble, there will be a subset of realizations which only vary a single sensitivity, but it should be confirmed to behave as intended before committing the full computational power. Some of the diagnostic metrics used should be relevant to the sensitivity you are testing, but for completeness, any metric used to sanity check a sensitivity implementation should be examined for every individual sensitivity being tested. This will form a set of diagnostic metrics unique to the ensemble, which can be presented as a multi-panel figure for each test. Note that these metrics may be different from those used in the final analysis. Take note as well if any of the sensitivities significantly increase the model runtime, and account for it when estimating the time the model runs will take.</p>
 <p>Two methods for running large numbers of GCAM realizations are 1) creating a unique configuration file for each run; and 2) running GCAM in <a class="reference external" href="https://jgcri.github.io/gcam-doc/user-guide.html#gcam-batch-mode">batch mode</a>. To automate the creation of configuration files for every model run (Method 1), XML editing packages such as those in <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html">Python</a> and <a class="reference external" href="https://cran.r-project.org/web/packages/XML/XML.pdf">R</a> can be used. In addition to adding, removing, and changing various XML files to construct each configuration, the user should deploy here a suitable naming convention for scenarios, as well as a folder hierarchy for grouping and storing scenario databases by sensitivity. Limiting to 100-200 databases in a single subdirectory can help organizationally. It can also be helpful to store the configuration files in a similarly structured hierarchy. In either method, note that the order in which the XML input files are listed in the configuration file can affect model behavior.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/2_run_figure_1.png"><img alt="Excerpt of a partial GCAM configuration file" src="_images/2_run_figure_1.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Excerpt of a partial GCAM configuration file.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Excerpt of a partial GCAM configuration file.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>For large, computationally intensive modeling scenario ensembles, it is recommended to use a high-performance computing cluster, rather than a personal computer. An organized folder hierarchy for completed runs is highly recommended for keeping track of overall progress as well as potential issues which may arise. A database being written after a model run is complete does not confirm a “good” model run (certain model periods may have failed in ways deemed unacceptable for the project), so simply counting the number of databases generated may not accurately measure progress, and could skip over “bad” runs. In a linux-based HPC environment, checking the quality of completed runs as well as failure modes of unsuccessful jobs can be done using bash scripts which check the contents of each job’s output and error logs. Consistent errors in scenarios which all share the same sensitivity or combination of sensitivities could signal an issue with its implementation in GCAM. Alternatively, such scenarios could simply be infeasible. If some realizations contain markets which did not solve, a quick fix could be to increase the iteration count in the <a class="reference external" href="https://jgcri.github.io/gcam-doc/solver.html#Solver-Configuration-File">solver file</a>. This is common when implementing changes that increase the model runtime, such as policies or adding new markets.</p>
@@ -389,7 +393,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Experimental Design</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Experimental Design</p>
       </div>
     </a>
     <a class="right-next"
@@ -397,7 +401,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Analysis</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
