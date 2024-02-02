@@ -31,6 +31,14 @@ Scenario Discovery with GCAM
     \frontmatter
     \sphinxmaketitle
 
+.. toctree::
+    :hidden:
+    :glob:
+
+    0_preface
+    citation
+    acknowledgements
+
 .. raw:: latex
 
     \sphinxtableofcontents
@@ -48,7 +56,6 @@ Scenario Discovery with GCAM
     :name: mastertoc
     :glob:
 
-    0_preface
     1_design
     2_run
     3_analysis
